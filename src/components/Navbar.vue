@@ -4,6 +4,7 @@
 			<div class="row justify-content-between">
 				<div class="col-4">
 					<div class="navbar__location">
+						<icon icon="location" color="gray" />
 						Волгоградская область
 					</div>
 				</div>
@@ -16,7 +17,10 @@
 							<router-link to="/" class="navbar__link">База подрядчиков</router-link>
 						</li>
 						<li class="navbar__item">
-							<router-link to="/" class="navbar__link">Другие сервисы</router-link>
+							<router-link to="/" class="navbar__link">
+								Другие сервисы
+								<icon icon="chevron-down" color="gray" />
+							</router-link>
 						</li>
 					</ul>
 				</div>
@@ -24,6 +28,15 @@
 		</div>
 	</div>
 </template>
+
+<script>
+import Icon from '@/components/Icon'
+export default {
+	components: {
+		Icon
+	}
+}
+</script>
 
 <style lang="scss" scoped>
 .navbar {
@@ -35,6 +48,10 @@
 	&__location {
 		color: $dark-gray;
 		cursor: pointer;
+
+		svg {
+			max-height: 15px;
+		}
 	}
 
 	&__nav {
