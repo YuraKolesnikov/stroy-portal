@@ -1,0 +1,1 @@
+export const dataFilter = str => item => item.manufacturer.toLowerCase().match(str) || item.model.toLowerCase().match(str) || item.vin.toLowerCase().match(str)
