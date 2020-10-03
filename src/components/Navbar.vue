@@ -1,9 +1,11 @@
 <template>
 	<div class="navbar">
 		<div class="container">
-			<div class="row">
+			<div class="row justify-content-between">
 				<div class="col-4">
-					<div class="navbar__location"></div>
+					<div class="navbar__location">
+						Волгоградская область
+					</div>
 				</div>
 				<div class="col-5">
 					<ul class="navbar__nav">
@@ -26,5 +28,31 @@
 <style lang="scss" scoped>
 .navbar {
 	background-color: $gray;
+	padding: 6px 0;
+	font-size: 12px;
+	font-weight: 400;
+
+	&__location {
+		color: $dark-gray;
+		cursor: pointer;
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
+
+	&__item {
+		margin-left: 24px;
+	}
+
+	&__link {
+		color: $dark-gray;
+
+		&:hover {
+			color: lighten($dark-gray, 10%);
+		}
+	}
 }
 </style>
