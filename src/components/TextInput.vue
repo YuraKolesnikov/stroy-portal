@@ -1,5 +1,5 @@
 <template>
-	<div class="text-input">
+	<div class="text-input" :class="{'text-input--active': !!value}">
 		<input type="text" class="text-input__input" :placeholder="placeholder" @input="$emit('input', $event)" :value="value">
 		<button class="text-input__button" @click="clearSearchValue">
 			<icon v-if="!value" icon="search" color="gray" />
@@ -39,6 +39,11 @@ export default {
 	font-size: 14px;
 	display: flex;
 	align-items: center;
+
+	&--active {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
 
 	&__input {
 		width: calc(100% - 20px);
