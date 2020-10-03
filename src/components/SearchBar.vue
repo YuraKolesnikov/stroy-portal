@@ -2,23 +2,24 @@
 	<div class="search-bar">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="w-20">
+				<div class="logo">
 					<img class="search-bar__logo" src="@/assets/img/logo.png" alt="">
 				</div>
-				<div class="w-10">
+				<div class="catalogue">
 					<button class="search-bar__catalogue">
+						<icon icon="hamburger" />
 						Каталог
 					</button>
 				</div>
-				<div class="w-50">
+				<div class="input">
 					<text-input placeholder="Хочу найти..." :value="searchValue" @input="updateSearchValue" @clearSearchValue="clearSearchValue" />
 				</div>
-				<div class="w-10">
+				<div class="list">
 					<button class="search-bar__list">
 						Список
 					</button>
 				</div>
-				<div class="w-5">
+				<div class="profile">
 					<div class="search-bar__profile-button">
 						A
 					</div>
@@ -30,9 +31,11 @@
 
 <script>
 import TextInput from '@/components/TextInput'
+import Icon from '@/components/Icon'
 export default {
 	components: {
-		TextInput
+		TextInput,
+		Icon
 	},
 	data() {
 		return {
@@ -59,6 +62,7 @@ export default {
 	}
 
 	&__catalogue {
+		cursor: pointer;
 		width: 100%;
 		height: 100%;
 		border: 0;
@@ -67,6 +71,10 @@ export default {
 		padding: 8px 16px;
 		font-weight: 600;
 		background-color: $accent-1;
+
+		&:focus {
+			outline: none;
+		}
 	}
 
 	&__list {
@@ -90,24 +98,18 @@ export default {
 		align-items: center;
 		justify-content: center;
 	}
-}
 
-.w-5,
-.w-10,
-.w-20,
-.w-50 {
-	max-height: 40px;
-}
+	.catalogue {
+		margin-left: 24px;
+	}
 
-.w-5:not(:last-child),
-.w-10:not(:last-child),
-.w-20:not(:last-child),
-.w-50:not(:last-child) {
-	margin-right: 24px;
-}
+	.input {
+		flex: 0 0 50%;
+		margin: 0 24px;
+	}
 
-.w-5 { flex: 0 0 calc(5% - 12px); }
-.w-10 { flex: 0 0 calc(10% - 12px); }
-.w-20 { flex: 0 0 calc(20% - 12px); }
-.w-50 { flex: 0 0 calc(50% - 12px); }
+	.list {
+		margin-right: 24px;
+	}
+}
 </style>

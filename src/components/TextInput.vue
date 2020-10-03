@@ -2,16 +2,21 @@
 	<div class="text-input">
 		<input type="text" class="text-input__input" :placeholder="placeholder" @input="$emit('input', $event)" :value="value">
 		<button class="text-input__button" @click="clearSearchValue">
-			{{ value ? 'C' : 'S' }}
+			<icon v-if="!value" icon="search" color="gray" />
+			<div v-else>&times;</div>
 		</button>
 	</div>
 </template>
 
 <script>
+import Icon from '@/components/Icon'
 export default {
 	props: {
 		placeholder: String,
 		value: String
+	},
+	components: {
+		Icon
 	},
 	methods: {
 		clearSearchValue() {
@@ -29,9 +34,11 @@ export default {
 	box-sizing: border-box;
 	border-radius: 4px;
 	width: 100%;
-	padding: 7px;
+	padding: 8px;
 	font-weight: 40;
 	font-size: 14px;
+	display: flex;
+	align-items: center;
 
 	&__input {
 		width: calc(100% - 20px);
@@ -56,6 +63,20 @@ export default {
 		&:focus, &:active {
 			outline: none;
 		}
+
+		svg {
+			transform: translateY(-1px);
+		}
+
+		div {
+			display: block;
+			font-size: 25px;
+			color: $dark-gray;
+			height: 100%;
+			line-height: 21px;
+		}
 	}
+
+	
 }
 </style>

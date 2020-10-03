@@ -1,0 +1,18 @@
+<svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg" id="list">
+    <path d="M15 1H3a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zm-2 10H5m8 4H5m5-8H5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  </symbol>
+	<symbol viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="search">
+    <path d="M9.167 15.833a6.667 6.667 0 1 0 0-13.333 6.667 6.667 0 0 0 0 13.333zM17.5 17.5l-3.625-3.625" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  </symbol>
+	<symbol viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="hamburger">
+    <path d="M2.5 10h15m-15-5h15m-15 10h15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+  </symbol>
+	<symbol viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" id="chevron-down">
+    <path d="M4.5 6.75l4.5 4.5 4.5-4.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  </symbol>
+	<symbol viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg" id="location">
+    <path d="M13 6.69c0 4.583-6 8.51-6 8.51s-6-3.927-6-8.51a5.84 5.84 0 0 1 1.757-4.165A6.057 6.057 0 0 1 7 .8c1.591 0 3.117.62 4.243 1.725A5.837 5.837 0 0 1 13 6.691z" stroke-linecap="round" stroke-linejoin="round"></path>
+    <path d="M7 8.655c1.104 0 2-.88 2-1.964s-.896-1.963-2-1.963c-1.105 0-2 .879-2 1.963 0 1.085.895 1.964 2 1.964z" stroke-linecap="round" stroke-linejoin="round"></path>
+  </symbol>
+</svg>
