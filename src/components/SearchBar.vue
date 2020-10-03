@@ -13,6 +13,9 @@
 				</div>
 				<div class="input">
 					<text-input placeholder="Хочу найти..." :value="searchValue" @input="updateSearchValue" @clearSearchValue="clearSearchValue" />
+					<transition name="fade">
+						<results :search-value="searchValue" :search-results="filteredList" @selectItem="clearSearchValue" />
+					</transition>
 				</div>
 				<div class="list">
 					<button class="search-bar__list">
@@ -30,16 +33,21 @@
 </template>
 
 <script>
+import data from '@/assets/data/data.json'
+import { dataFilter } from '@/utils/utils'
 import TextInput from '@/components/TextInput'
 import Icon from '@/components/Icon'
+import Results from '@/components/Results'
 export default {
 	components: {
 		TextInput,
-		Icon
+		Icon,
+		Results
 	},
 	data() {
 		return {
-			searchValue: ''
+			searchValue: '',
+			searchResults: data
 		}
 	},
 	methods: {
@@ -48,6 +56,13 @@ export default {
 		},
 		clearSearchValue() {
 			this.searchValue = ''
+		}
+	},
+	computed: {
+		filteredList() {
+			if (!this.searchValue) return this.searchResults
+			const array = this.searchResults.filter(dataFilter(this.searchValue))
+			return array
 		}
 	}
 }
@@ -75,6 +90,10 @@ export default {
 		&:focus {
 			outline: none;
 		}
+	}
+
+	&__results {
+		
 	}
 
 	&__list {
@@ -106,10 +125,18 @@ export default {
 	.input {
 		flex: 0 0 50%;
 		margin: 0 24px;
+		position: relative;
 	}
 
 	.list {
 		margin-right: 24px;
 	}
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+  opacity: 0;
 }
 </style>
